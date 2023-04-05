@@ -5,17 +5,17 @@ import jpabook.jpashop.respository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-@Transactional //데이터 변경은 트랜잭션 안에서 기본적으로 readOnly=false
-@RequiredArgsConstructor // final이 있는 인자들에 생성자 생성
+@Transactional(readOnly = true) //데이터 변경은 트랜잭션 안에서 기본적으로 readOnly=false
+//@RequiredArgsConstructor // final이 있는 인자들에 생성자 생성
 public class MemberService {
 
-    //@Autowired // 인젝션
-    private final MemberRepository memberRepository;
+    @Autowired //인젝션
+    MemberRepository memberRepository;
 
 
 

@@ -2,7 +2,6 @@ package jpabook.jpashop.domain;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.cache.spi.support.AbstractCachedDomainDataAccess;
 
 import javax.persistence.*;
 import java.util.ArrayList;

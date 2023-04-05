@@ -1,6 +1,5 @@
 package jpabook.jpashop.respository;
 
-import com.sun.xml.internal.ws.api.ha.StickyFeature;
 import jpabook.jpashop.domain.Member;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -11,11 +10,10 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository //컴포넌트 스캔의 대상
-@RequiredArgsConstructor
 public class MemberRepository {
 
     @PersistenceContext //스프링에 의해 jpa의 엔터티매니저를 주입받을 수 있다.
-    private final EntityManager em;
+    private EntityManager em;
 
     public void save(Member member){
         em.persist(member); //멤버 객체를 넣고, transaction이 커밋되는 시점에 DB에 반영이 된다.
