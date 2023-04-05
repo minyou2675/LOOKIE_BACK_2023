@@ -19,7 +19,7 @@ public class Member {
     private Address address;
 
     @OneToMany(mappedBy = "member")
-    private List<Order> orders = new ArrayList<>();
+    private List<Order> orders = new ArrayList<>(); //1대 다로 orders 가지고 있음
 
 
 }
