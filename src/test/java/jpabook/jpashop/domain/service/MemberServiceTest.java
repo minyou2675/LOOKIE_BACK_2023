@@ -2,12 +2,12 @@ package jpabook.jpashop.domain.service;
 
 import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.respository.MemberRepository;
+import jpabook.jpashop.service.MemberService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.annotation.Rollback;
-import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
@@ -15,7 +15,7 @@ import javax.persistence.EntityManager;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
-import static org.junit.jupiter.api.Assertions.*;
+
 @SpringBootTest
 @Transactional
 public class MemberServiceTest {
